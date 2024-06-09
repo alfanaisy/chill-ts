@@ -11,7 +11,7 @@ export default {
         'register': "url('/src/assets/bg-register.jpg')",
       },
       fontFamily: {
-        'sans': ["lato", "sans-serif"]
+        'sans': ["lato"]
       },
       colors: {
         'primary': {
