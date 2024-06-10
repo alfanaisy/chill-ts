@@ -1,26 +1,14 @@
-import { useMediaQuery } from 'usehooks-ts';
-import Logo from '../../assets/logo.svg';
-import LogoMobile from '../../assets/logo-sm.svg';
-import Avatar from '../../assets/avatar.svg';
-import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-import { IoMdLogOut, IoMdPerson, IoMdStar } from 'react-icons/io';
-import { ReactElement, useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
+import Avatar from '../../assets/avatar.svg';
+import LogoMobile from '../../assets/logo-sm.svg';
+import Logo from '../../assets/logo.svg';
+import NavItem from './NavItem';
+import ProfileMenu from './ProfileMenu';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
-
-  const navItems: { label: string; link: string }[] = [
-    { label: 'Series', link: '/series' },
-    { label: 'Film', link: '/films' },
-    { label: 'Daftar Saya', link: '/my-list' },
-  ];
-
-  const menuItem: { label: string; icon: ReactElement }[] = [
-    { label: 'Profil Saya', icon: <IoMdPerson /> },
-    { label: 'Ubah Premium', icon: <IoMdStar /> },
-    { label: 'Keluar', icon: <IoMdLogOut /> },
-  ];
 
   const isMobile = useMediaQuery('(max-width: 768px)');
   return (
@@ -32,14 +20,7 @@ const Navbar = () => {
             alt="Navbar Logo"
             className={`${isMobile ? 'w-5' : 'w-24'} min-h-11`}
           />
-          {navItems.map((item) => (
-            <NavLink
-              to={item.link}
-              className="text-white font-medium leading-4 text-xs md:text-lg"
-            >
-              {item.label}
-            </NavLink>
-          ))}
+          <NavItem />
         </div>
         <div
           onClick={() => setShowMenu(!showMenu)}
@@ -52,22 +33,7 @@ const Navbar = () => {
           </span>
         </div>
       </div>
-      {showMenu && (
-        <div
-          onMouseEnter={() => setShowMenu(true)}
-          onMouseLeave={() => setShowMenu(false)}
-          className={
-            'absolute top-14 md:top-[92px] right-6 md:right-10 flex flex-col items-start py-1 bg-other-header rounded-b-md min-w-28 md:min-w-40 text-white'
-          }
-        >
-          {menuItem.map((item) => (
-            <div className="flex items-center justify-between gap-1 py-2 px-3 cursor-pointer">
-              <span className="min-w-4 md:min-w-6">{item.icon}</span>{' '}
-              <p className="text-xs md:text-sm font-medium">{item.label}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      {showMenu && <ProfileMenu setShowMenu={setShowMenu} />}
     </>
   );
 };
