@@ -9,6 +9,7 @@ export default {
       backgroundImage: {
         'login': "url('/src/assets/bg-login.jpg')",
         'register': "url('/src/assets/bg-register.jpg')",
+        'hero': "url('/src/assets/hero-img.png')"
       },
       fontFamily: {
         'sans': ["lato"]

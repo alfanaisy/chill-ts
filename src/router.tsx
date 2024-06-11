@@ -3,6 +3,7 @@ import AuthLayout from './pages/auth/AuthLayout';
 import MainLayout from './pages/main/MainLayout';
 import LoginPage from './pages/auth/login/LoginPage';
 import RegisterPage from './pages/auth/register/RegisterPage';
+import HomePage from './pages/main/home/HomePage';
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ export const router = createBrowserRouter([
     path: '/',
     element: <MainLayout />,
     children: [
-      { index: true, element: <h1>Home</h1> },
+      { index: true, element: <HomePage /> },
       { path: '/series', element: <h1>Series</h1> },
     ],
   },

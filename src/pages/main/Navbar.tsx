@@ -13,7 +13,7 @@ const Navbar = () => {
   const isMobile = useMediaQuery('(max-width: 768px)');
   return (
     <>
-      <div className="fixed w-full bg-other-header py-1.5 px-5 md:py-6 md:px-20 flex justify-evenly md:justify-between items-center gap-3">
+      <div className="fixed top-0 w-full bg-other-header py-1.5 px-5 md:py-6 md:px-20 flex justify-evenly md:justify-between items-center gap-3">
         <div className="text-white basis-4/5 flex items-center gap-4 md:gap-20">
           <img
             src={isMobile ? LogoMobile : Logo}
