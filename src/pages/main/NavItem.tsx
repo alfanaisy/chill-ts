@@ -9,6 +9,7 @@ const NavItem = () => {
 
   return navItems.map((item) => (
     <NavLink
+      key={item.label}
       to={item.link}
       className="text-white font-medium leading-4 text-xs md:text-lg"
     >

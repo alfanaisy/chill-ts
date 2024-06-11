@@ -21,7 +21,10 @@ const ProfileMenu = ({
       }
     >
       {menuItem.map((item) => (
-        <div className="flex items-center justify-between gap-1 py-2 px-3 cursor-pointer">
+        <div
+          key={item.label}
+          className="flex items-center justify-between gap-1 py-2 px-3 cursor-pointer"
+        >
           <span className="min-w-4 md:min-w-6">{item.icon}</span>{' '}
           <p className="text-xs md:text-sm font-medium">{item.label}</p>
         </div>

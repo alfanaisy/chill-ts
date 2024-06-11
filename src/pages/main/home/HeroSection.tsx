@@ -7,7 +7,7 @@ const HeroSection = () => {
 
   return (
     <div className="w-full min-h-80 md:min-h-[calc(100vh-92px)] bg-hero bg-cover bg-center bg-no-repeat ">
-      <div className="w-full min-h-80 md:min-h-[calc(100vh-92px)] bg-gradient-to-b from-transparent to-gray-900 text-white p-8 md:p-16 flex flex-col justify-end">
+      <div className="w-full min-h-80 md:min-h-[calc(100vh-92px)] bg-gradient-to-b from-transparent to-other-header text-white p-8 md:p-16 flex flex-col justify-end">
         <div className="md:w-1/2">
           <h1 className="text-2xl md:text-5xl font-bold mb-4 md:mb-8">
             Duty After School
@@ -35,7 +35,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div
-            className="bg-transparent ring-1 ring-text-light-200 h-6 w-6 md:h-11 md:w-11 grow-0 shrink-0 rounded-full text-center inline-flex items-center justify-center"
+            className="bg-transparent ring-1 ring-text-light-200 h-6 w-6 md:h-11 md:w-11 grow-0 shrink-0 rounded-full text-center inline-flex items-center justify-center cursor-pointer"
             onClick={() => setIsMute(!isMute)}
           >
             <span className="md:text-xl">
