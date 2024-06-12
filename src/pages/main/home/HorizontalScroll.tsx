@@ -9,7 +9,6 @@ interface Props {
 const HorizontalScroll = ({ children, height }: Props) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [childWidth, setChildWidth] = useState(0);
-  console.log(height);
 
   useEffect(() => {
     if (scrollContainerRef.current && scrollContainerRef.current.firstChild) {
@@ -26,16 +25,12 @@ const HorizontalScroll = ({ children, height }: Props) => {
   };
 
   return (
-    <div className="relative p-2 bg-green-600">
+    <div className="relative p-1 ">
       <div
         ref={scrollContainerRef}
-        className={`min-h-${height} w-full text-white overflow-x-scroll overflow-y-hidden bg-blue-700 p-2 whitespace-nowrap scroll-smooth hide-scrollbar`}
+        className={`relative h-${height} w-full text-white overflow-x-scroll overflow-y-visible whitespace-nowrap scroll-smooth hide-scrollbar`}
       >
-        <div
-          className={`w-fit h-fit flex gap-5 bg-orange-600 p-2 overflow-y-hidden`}
-        >
-          {children}
-        </div>
+        <div className={`w-fit h-full flex gap-5`}>{children}</div>
       </div>
       <button
         className="absolute top-1/2 left-0 transform -translate-x-1/2 bg-white bg-opacity-55 rounded-full text-3xl"

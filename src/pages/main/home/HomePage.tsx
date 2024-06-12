@@ -1,5 +1,5 @@
 import HeroSection from './HeroSection';
-import TopList from './TopList';
+import ItemList from './ItemList';
 import WatchList from './WatchList';
 
 const HomePage = () => {
@@ -7,8 +7,9 @@ const HomePage = () => {
     <>
       <HeroSection />
       <WatchList />
-      <TopList />
-      <TopList />
+      <ItemList title="Top Rating Film dan Series Hari ini" />
+      <ItemList title="Film Trending" />
+      <ItemList title="Rilis Baru" />
     </>
   );
 };
