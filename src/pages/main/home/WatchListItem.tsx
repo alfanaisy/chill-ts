@@ -8,7 +8,7 @@ interface Props {
 
 const WatchListItem = ({ image, title, rating }: Props) => {
   return (
-    <div className="relative w-80 bg-blue-400 flex items-center justify-center rounded-md overflow-hidden">
+    <div className="relative w-80 flex items-center justify-center rounded-md overflow-hidden cursor-pointer">
       <img
         src={image}
         alt="Watch List Thumbnail"

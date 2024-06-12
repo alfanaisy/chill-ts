@@ -1,9 +1,15 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
 
-const HorizontalScroll = ({ children }: { children: ReactNode }) => {
+interface Props {
+  children: ReactNode;
+  height: string;
+}
+
+const HorizontalScroll = ({ children, height }: Props) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [childWidth, setChildWidth] = useState(0);
+  console.log(height);
 
   useEffect(() => {
     if (scrollContainerRef.current && scrollContainerRef.current.firstChild) {
@@ -20,12 +26,16 @@ const HorizontalScroll = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative p-2 bg-green-600">
       <div
         ref={scrollContainerRef}
-        className={`relative h-[27vh] w-full text-white overflow-x-auto overflow-y-hidden whitespace-nowrap scroll-smooth hide-scrollbar`}
+        className={`min-h-${height} w-full text-white overflow-x-scroll overflow-y-hidden bg-blue-700 p-2 whitespace-nowrap scroll-smooth hide-scrollbar`}
       >
-        <div className="h-full w-fit flex gap-5">{children}</div>
+        <div
+          className={`w-fit h-fit flex gap-5 bg-orange-600 p-2 overflow-y-hidden`}
+        >
+          {children}
+        </div>
       </div>
       <button
         className="absolute top-1/2 left-0 transform -translate-x-1/2 bg-white bg-opacity-55 rounded-full text-3xl"

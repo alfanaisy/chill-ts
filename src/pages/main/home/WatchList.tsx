@@ -25,6 +25,16 @@ const WatchList = () => {
       title: 'Some Series 2',
       rating: 4.4,
     },
+    {
+      image: Thumbnail1,
+      title: 'Some Series 1',
+      rating: 4.3,
+    },
+    {
+      image: Thumbnail2,
+      title: 'Some Series 2',
+      rating: 4.4,
+    },
   ];
 
   return (
@@ -32,7 +42,7 @@ const WatchList = () => {
       <h2 className="text-xl md:text-2xl font-bold mb-4">
         Melanjutkan Tonton Film
       </h2>
-      <HorizontalScroll>
+      <HorizontalScroll height="27vh">
         {items.map((item, index) => (
           <WatchListItem
             key={index}
