@@ -1,15 +1,17 @@
-import HeroSection from './HeroSection';
-import ItemList from './ItemList';
-import WatchList from './WatchList';
+import HeroSection from './components/HeroSection';
+import ItemList from './components/ItemList';
+import WatchList from './components/WatchList';
 
 const HomePage = () => {
   return (
     <>
       <HeroSection />
-      <WatchList />
-      <ItemList title="Top Rating Film dan Series Hari ini" />
-      <ItemList title="Film Trending" />
-      <ItemList title="Rilis Baru" />
+      <div className="p-8 md:p-16 bg-other-header flex flex-col gap-6 md:gap-12">
+        <WatchList />
+        <ItemList title="Top Rating Film dan Series Hari ini" />
+        <ItemList title="Film Trending" />
+        <ItemList title="Rilis Baru" />
+      </div>
     </>
   );
 };

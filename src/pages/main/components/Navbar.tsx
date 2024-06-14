@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import { useMediaQuery } from 'usehooks-ts';
-import Avatar from '../../assets/avatar.svg';
-import LogoMobile from '../../assets/logo-sm.svg';
-import Logo from '../../assets/logo.svg';
+import Avatar from '../../../assets/avatar.svg';
+import LogoMobile from '../../../assets/logo-sm.svg';
+import Logo from '../../../assets/logo.svg';
 import NavItem from './NavItem';
 import ProfileMenu from './ProfileMenu';
 

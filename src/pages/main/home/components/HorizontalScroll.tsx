@@ -1,22 +1,24 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { BiChevronLeft, BiChevronRight } from 'react-icons/bi';
+import { useMediaQuery } from 'usehooks-ts';
 
 interface Props {
   children: ReactNode;
-  height: string;
 }
 
-const HorizontalScroll = ({ children, height }: Props) => {
+const HorizontalScroll = ({ children }: Props) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [childWidth, setChildWidth] = useState(0);
 
   useEffect(() => {
+    const gapSize: number = isMobile ? 12 : 20;
     if (scrollContainerRef.current && scrollContainerRef.current.firstChild) {
       const elementItem = scrollContainerRef.current.firstElementChild
         ?.firstElementChild as HTMLElement;
-      setChildWidth(elementItem.offsetWidth + 20);
+      setChildWidth(elementItem.offsetWidth + gapSize);
     }
-  }, [children]);
+  }, [children, isMobile]);
 
   const scroll = (scrollAmount: number) => {
     if (scrollContainerRef.current) {
@@ -25,12 +27,12 @@ const HorizontalScroll = ({ children, height }: Props) => {
   };
 
   return (
-    <div className="relative">
+    <div className={`relative`}>
       <div
         ref={scrollContainerRef}
-        className={`relative h-${height} w-full text-white overflow-x-scroll overflow-y-clip whitespace-nowrap scroll-smooth hide-scrollbar`}
+        className={`relative w-full text-white overflow-x-scroll overflow-y-clip whitespace-nowrap scroll-smooth hide-scrollbar`}
       >
-        <div className={`w-fit h-full flex gap-5`}>{children}</div>
+        <div className={`w-fit h-full flex gap-3 md:gap-5`}>{children}</div>
       </div>
       <button
         className="absolute top-1/2 left-0 transform -translate-x-1/2 bg-white bg-opacity-55 rounded-full text-3xl"

@@ -40,7 +40,7 @@ const InputGroup = ({
       {type === 'password' && (
         <div
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute top-9 right-3.5 md:top-11 md:right-5 text-white md:text-lg"
+          className="absolute top-9 right-3.5 md:top-11 md:right-5 text-white md:text-lg cursor-pointer"
         >
           {showPassword ? <FaEye /> : <FaEyeSlash />}
         </div>

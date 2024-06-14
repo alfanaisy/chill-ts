@@ -1,12 +1,15 @@
 import { BsStarFill } from 'react-icons/bs';
+import { LabelType } from '../../../../constants/labelType';
+import Labels from './Labels';
 
 interface Props {
   image: string;
   title: string;
   rating: number;
+  labels?: LabelType;
 }
 
-const WatchListItem = ({ image, title, rating }: Props) => {
+const WatchListItem = ({ image, title, rating, labels }: Props) => {
   return (
     <div className="relative w-80 flex items-center justify-center rounded-md overflow-hidden cursor-pointer md:hover:scale-[1.01]">
       <img
@@ -23,6 +26,7 @@ const WatchListItem = ({ image, title, rating }: Props) => {
           {rating}/5
         </p>
       </div>
+      {labels && <Labels labelType={labels} />}
     </div>
   );
 };
