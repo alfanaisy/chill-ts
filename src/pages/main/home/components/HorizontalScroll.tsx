@@ -33,7 +33,7 @@ const HorizontalScroll = ({ children }: Props) => {
     <div className={`relative`}>
       <div
         ref={scrollContainerRef}
-        className={`relative w-full text-white overflow-x-scroll overflow-y-clip whitespace-nowrap scroll-smooth hide-scrollbar`}
+        className={`relative w-full text-white overflow-x-scroll overflow-y-hidden scroll-smooth snap-x hide-scrollbar`}
       >
         <div className={`w-fit h-full flex gap-3 md:gap-5`}>{children}</div>
       </div>

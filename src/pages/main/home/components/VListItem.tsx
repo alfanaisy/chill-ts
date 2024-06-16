@@ -11,7 +11,7 @@ interface Props {
 
 const VListItem = ({ image, isTop = false, labels, title }: Props) => {
   return (
-    <div className="relative w-40 md:w-60 flex items-center justify-center cursor-pointer group">
+    <div className="relative w-40 md:w-60 flex items-center justify-center cursor-pointer group snap-start">
       <div className="h-full rounded-md overflow-hidden">
         <img src={image} alt="Top List" className="w-full h-full" />
       </div>

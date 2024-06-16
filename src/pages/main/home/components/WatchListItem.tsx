@@ -11,7 +11,7 @@ interface Props {
 
 const WatchListItem = ({ image, title, rating, labels }: Props) => {
   return (
-    <div className="relative w-80 flex items-center justify-center rounded-md overflow-hidden cursor-pointer md:hover:scale-[1.01]">
+    <div className="relative w-80 flex items-center justify-center rounded-md overflow-hidden cursor-pointer md:hover:scale-[1.01] snap-start">
       <img
         src={image}
         alt="Watch List Thumbnail"
