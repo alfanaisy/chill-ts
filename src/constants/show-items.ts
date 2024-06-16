@@ -130,3 +130,69 @@ export const newReleases: ItemListType[] = [
     isTop: false,
   },
 ];
+
+export const myList: ItemListType[] = [
+  {
+    image: Thumbnail1,
+    title: 'Suzume',
+    labels: 'Episode Baru',
+    isTop: false,
+  },
+  {
+    image: Trending2,
+    title: 'Ant-Man: Quantumania',
+    isTop: true,
+  },
+  {
+    image: NewRelease3,
+    title: 'Missing',
+    isTop: false,
+  },
+  {
+    image: Trending3,
+    title: 'Guardians of the Galaxy Vol. 3',
+    isTop: true,
+  },
+  {
+    image: Thumbnail4,
+    title: 'Big Hero 6',
+    isTop: false,
+  },
+  {
+    image: Trending1,
+    title: 'The Tomorrow War',
+    labels: 'Premium',
+    isTop: false,
+  },
+  {
+    image: NewRelease2,
+    title: 'All of us are Dead',
+    labels: 'Episode Baru',
+    isTop: false,
+  },
+  {
+    image: Thumbnail3,
+    title: 'Sonic the Hedgehog 2',
+    isTop: false,
+  },
+  {
+    image: NewRelease1,
+    title: 'Duty After School',
+    isTop: false,
+  },
+  {
+    image: Trending5,
+    title: 'The Little Mermaid',
+    isTop: true,
+  },
+  {
+    image: Thumbnail2,
+    title: 'Jurassic World: Dominion',
+    isTop: true,
+  },
+  {
+    image: Trending4,
+    title: 'A Man called Otto',
+    isTop: true,
+  },
+];

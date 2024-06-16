@@ -4,6 +4,7 @@ import MainLayout from './pages/main/MainLayout';
 import LoginPage from './pages/auth/login/LoginPage';
 import RegisterPage from './pages/auth/register/RegisterPage';
 import HomePage from './pages/main/home/HomePage';
+import MyListPage from './pages/main/my-list/MyListPage';
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,9 @@ export const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
-    children: [{ index: true, element: <HomePage /> }],
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'my-list', element: <MyListPage /> },
+    ],
   },
 ]);

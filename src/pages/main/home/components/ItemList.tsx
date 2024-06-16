@@ -14,6 +14,7 @@ const ItemList = ({ title, items }: Props) => {
       <HorizontalScroll>
         {items.map((item) => (
           <VListItem
+            width="min-w-40 md:min-w-60"
             image={item.image}
             title={item.title}
             isTop={item.isTop}

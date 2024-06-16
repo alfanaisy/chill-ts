@@ -6,6 +6,7 @@ import LogoMobile from '../../../assets/logo-sm.svg';
 import Logo from '../../../assets/logo.svg';
 import NavItem from './NavItem';
 import ProfileMenu from './ProfileMenu';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -15,11 +16,13 @@ const Navbar = () => {
     <>
       <div className="fixed top-0 w-full bg-other-header py-1.5 px-5 md:py-6 md:px-20 flex justify-evenly md:justify-between items-center gap-3 z-50">
         <div className="text-white basis-4/5 flex items-center gap-4 md:gap-20">
-          <img
-            src={isMobile ? LogoMobile : Logo}
-            alt="Navbar Logo"
-            className={`${isMobile ? 'w-5' : 'w-24'} min-h-11`}
-          />
+          <Link to={'/'}>
+            <img
+              src={isMobile ? LogoMobile : Logo}
+              alt="Navbar Logo"
+              className={`${isMobile ? 'w-5' : 'w-24'} min-h-11`}
+            />
+          </Link>
           <NavItem />
         </div>
         <div

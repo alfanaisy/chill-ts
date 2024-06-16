@@ -14,7 +14,7 @@ interface Props {
 }
 
 const FooterItem = ({ title, items }: Props) => {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery('(max-width: 767.5px)');
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

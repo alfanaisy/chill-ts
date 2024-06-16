@@ -1,12 +1,11 @@
-import HeroSection from './components/HeroSection';
-import ItemList from './components/ItemList';
-import WatchList from './components/WatchList';
-import Footer from '../../main/components/Footer';
 import {
   newReleases,
   topRated,
   trendingItems,
 } from '../../../constants/show-items';
+import HeroSection from './components/HeroSection';
+import ItemList from './components/ItemList';
+import WatchList from './components/WatchList';
 
 const HomePage = () => {
   return (
@@ -21,7 +20,6 @@ const HomePage = () => {
         <ItemList title="Film Trending" items={trendingItems} />
         <ItemList title="Rilis Baru" items={newReleases} />
       </div>
-      <Footer />
     </>
   );
 };
