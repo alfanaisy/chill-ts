@@ -1,15 +1,25 @@
 import { ReactElement } from 'react';
 import { IoMdLogOut, IoMdPerson, IoMdStar } from 'react-icons/io';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileMenu = ({
   setShowMenu,
 }: {
   setShowMenu: (e: boolean) => void;
 }) => {
-  const menuItem: { label: string; icon: ReactElement }[] = [
-    { label: 'Profil Saya', icon: <IoMdPerson /> },
-    { label: 'Ubah Premium', icon: <IoMdStar /> },
-    { label: 'Keluar', icon: <IoMdLogOut /> },
+  const navigate = useNavigate();
+  const logout = () => {
+    navigate('/auth/login', { replace: true });
+  };
+
+  const menuItem: {
+    label: string;
+    icon: ReactElement;
+    onClick: () => void;
+  }[] = [
+    { label: 'Profil Saya', icon: <IoMdPerson />, onClick: () => {} },
+    { label: 'Ubah Premium', icon: <IoMdStar />, onClick: () => {} },
+    { label: 'Keluar', icon: <IoMdLogOut />, onClick: logout },
   ];
 
   return (
@@ -23,7 +33,8 @@ const ProfileMenu = ({
       {menuItem.map((item) => (
         <div
           key={item.label}
-          className="flex items-center justify-between gap-1 py-2 px-3 cursor-pointer"
+          className="flex items-center justify-between gap-1 py-2 px-3 cursor-pointer hover:text-primary-300"
+          onClick={item.onClick}
         >
           <span className="min-w-4 md:min-w-6">{item.icon}</span>{' '}
           <p className="text-xs md:text-sm font-medium">{item.label}</p>
