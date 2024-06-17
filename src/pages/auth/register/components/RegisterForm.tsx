@@ -48,7 +48,11 @@ const RegisterForm = () => {
           type="password"
         />
         <div className="flex justify-between mt-1.5">
-          <TextWithLink text="Sudah punya akun?" linkText="Masuk" to="/login" />
+          <TextWithLink
+            text="Sudah punya akun?"
+            linkText="Masuk"
+            to="/auth/login"
+          />
         </div>
       </div>
       <div className="flex flex-col gap-1 md:gap-2">

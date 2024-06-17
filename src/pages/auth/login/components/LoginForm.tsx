@@ -38,7 +38,7 @@ const LoginForm = () => {
           <TextWithLink
             text="Belum punya akun?"
             linkText="Daftar"
-            to="/register"
+            to="/auth/register"
           />
           <TextWithLink linkText="Lupa kata sandi?" to="#" />
         </div>

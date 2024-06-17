@@ -17,8 +17,6 @@ const HorizontalScroll = ({ children }: Props) => {
       const elementItem = scrollContainerRef.current.firstElementChild
         ?.firstElementChild as HTMLElement;
 
-      console.log(scrollContainerRef.current.firstChild);
-
       setChildWidth(elementItem.offsetWidth + gapSize);
     }
   }, [children, isMobile]);

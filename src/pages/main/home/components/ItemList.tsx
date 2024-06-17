@@ -12,8 +12,9 @@ const ItemList = ({ title, items }: Props) => {
     <div className="bg-other-header text-white">
       <h2 className="text-xl md:text-2xl font-bold mb-4">{title}</h2>
       <HorizontalScroll>
-        {items.map((item) => (
+        {items.map((item, i) => (
           <VListItem
+            key={i}
             width="min-w-40 md:min-w-60"
             image={item.image}
             title={item.title}
