@@ -3,7 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 const AuthLayout = () => {
   const { pathname } = useLocation();
 
-  const background = pathname === '/login' ? 'bg-login' : 'bg-register';
+  const background = pathname === '/auth/login' ? 'bg-login' : 'bg-register';
 
   return (
     <div
